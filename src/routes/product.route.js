@@ -3,8 +3,8 @@ const router = Router();
 
 const { searchProducts, getProduct } = require("../controllers/product.controller");
 
-router.route("").get(searchProducts);
-
 router.route("/:id").get(getProduct);
+
+router.route("").get(searchProducts);
 
 module.exports = router;
