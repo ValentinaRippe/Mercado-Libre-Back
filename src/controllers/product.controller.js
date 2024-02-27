@@ -17,14 +17,8 @@ prodcutsCtrl.searchProducts = async (req, res) => {
       const { results, available_filters } = data;
 
       let info = {
-        author: {},
         categories: [],
         items: [],
-      };
-
-      info.author = {
-        name: "",
-        lastname: "",
       };
 
       info.items = results.map((item) => {
@@ -39,6 +33,10 @@ prodcutsCtrl.searchProducts = async (req, res) => {
           picture: `https://http2.mlstatic.com/D_NQ_NP_2X_${item.thumbnail_id}-F.jpg`,
           condition: item.condition,
           free_shipping: item.shipping.free_shipping,
+          author: {
+            name: item.seller.nickname,
+            lastname: "",
+          },
         };
       });
 
