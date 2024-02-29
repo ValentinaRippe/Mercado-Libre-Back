@@ -1,16 +1,15 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const prouteProduct = require("./routes/product.route")
-const config = require('./config')
+
 //Setings
-app.set("port", process.env.PORT || config.PORT);
+app.set("port", process.env.PORT || 4000);
 
 //Middlewares
 app.use(cors());
 app.use(express.json());
 
 //routes
-app.use("/api/items", prouteProduct);
+app.use("/api/items", require("./routes/product.route"));
 
 module.exports = app;

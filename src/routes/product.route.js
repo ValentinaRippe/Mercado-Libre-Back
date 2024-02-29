@@ -5,6 +5,6 @@ const { searchProducts, getProduct } = require("../controllers/product.controlle
 
 router.route("/:id").get(getProduct);
 
-router.route("/").get(searchProducts);
+router.route("").get(searchProducts);
 
 module.exports = router;
