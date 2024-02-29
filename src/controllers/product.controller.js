@@ -1,10 +1,5 @@
 const axios = require("axios");
-
-const searchApi = (query, limit = 4) =>
-  `https://api.mercadolibre.com/sites/MLA/search?q=${query}&limit=${limit}`;
-const sellerApi = (id) => `https://api.mercadolibre.com/users/${id}`;
-const itemApi = (id) => `https://api.mercadolibre.com/items/${id}`;
-const itemDescriptionApi = (id) => `https://api.mercadolibre.com/items/${id}/description`;
+const { searchApi, sellerApi, itemApi, itemDescriptionApi } = require('../config')
 
 const prodcutsCtrl = {
   searchProducts: async (req, res) => {

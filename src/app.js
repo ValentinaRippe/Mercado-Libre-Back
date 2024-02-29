@@ -2,9 +2,9 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const prouteProduct = require("./routes/product.route")
-const PORT = 4000
+const config = require('./config')
 //Setings
-app.set("port", process.env.PORT || PORT);
+app.set("port", process.env.PORT || config.PORT);
 
 //Middlewares
 app.use(cors());
