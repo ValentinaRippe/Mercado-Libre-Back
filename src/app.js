@@ -6,8 +6,15 @@ const config = require('./config')
 //Setings
 app.set("port", process.env.PORT || config.PORT);
 
+const corsOption = {
+    origin: "*",
+    method: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept"],
+    credentials: true
+};
+
 //Middlewares
-app.use(cors());
+app.use(cors(corsOption));
 app.use(express.json());
 
 //routes
